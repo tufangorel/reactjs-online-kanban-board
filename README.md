@@ -19,3 +19,5 @@ v8.9.4
 
 http://localhost:8080/
 
+
+![kanban_board](https://user-images.githubusercontent.com/147615/40277741-1042ed7e-5c2d-11e8-932d-2a7fc29c0cfd.png)
