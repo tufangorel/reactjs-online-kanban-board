@@ -1,5 +1,4 @@
 import React from 'react';
-//import uuid from 'uuid';
 import connect from '../libs/connect';
 import NoteActions from '../actions/NoteActions';
 import Notes from './Notes';
@@ -10,33 +9,11 @@ import {compose} from 'redux';
 import {DropTarget} from 'react-dnd';
 import ItemTypes from '../constants/itemTypes';
 
-// export default ({lane, ...props}) => (
-//   <div {...props}>{lane.name}</div>
-// )
-
 const Lane = ({ connectDropTarget, lane, notes, LaneActions, NoteActions, ...props}) => {
 
   const editNote = (id,task) => {
     NoteActions.update({id, task, editing:false});
   };
-
-/*
-  const addNote = e => {
-    e.stopPropagation();
-    const noteId = uuid.v4();
-
-    NoteActions.create( {
-        id: noteId,
-        task: 'New task'
-    });
-
-    LaneActions.attachToLane({
-      laneId: lane.id,
-      noteId
-    });
-
-  };
-  */
 
   const deleteNote = (noteId,e) => {
     e.stopPropagation();
@@ -82,8 +59,6 @@ const noteTarget = {
         }
     }
 };
-
-//export default compose(({notes}) => ({notes}), {NoteActions, LaneActions} )(Lane)
 
 export default compose(DropTarget(ItemTypes.NOTE, noteTarget, connect => ({
   connectDropTarget: connect.dropTarget()

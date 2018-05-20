@@ -36,12 +36,6 @@ const noteTarget = {
   }
 };
 
-/*
-export default DragSource(ItemTypes.NOTE, noteSource, connect => ({
-  connectDragSource: connect.dragSource()
-}))(Note);
-*/
-
 export default compose(
   DragSource(ItemTypes.NOTE, noteSource, (connect,monitor) => ({
     connectDragSource: connect.dragSource(),

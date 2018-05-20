@@ -51,4 +51,3 @@ class Edit extends React.Component {
 }
 
 Editable.Edit = Edit;
-// export default Editable;
